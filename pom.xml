@@ -1,7 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -11,26 +10,23 @@
   <name>my-app</name>
   <url>https://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>17</java.version>
-  </properties>
-
   <dependencies>
     <!-- Spring Boot Starter Web -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <version>3.2.5</version>
     </dependency>
 
-    <!-- Spring Boot Test (includes JUnit 5 & MockMvc) -->
+    <!-- Spring Boot Starter Test -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <version>3.2.5</version>
       <scope>test</scope>
     </dependency>
 
-    <!-- JUnit Jupiter API (already included, kept as-is) -->
+    <!-- JUnit Jupiter API -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -38,6 +34,10 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
   <build>
     <pluginManagement>
@@ -54,7 +54,7 @@
     </pluginManagement>
 
     <plugins>
-      <!-- Build an executable JAR -->
+      <!-- Executable JAR Setup -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -70,7 +70,7 @@
         </configuration>
       </plugin>
 
-      <!-- Enforce Java & Maven version -->
+      <!-- Enforce Maven & Java Versions -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -95,11 +95,14 @@
         </executions>
       </plugin>
 
-      <!-- Spring Boot Maven Plugin -->
+      <!-- Spring Boot Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>3.2.5</version>
       </plugin>
+
     </plugins>
   </build>
+
 </project>
