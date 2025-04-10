@@ -17,6 +17,9 @@ pipeline {
             steps {
                 echo 'Building and testing the Maven app...'
                 sh 'mvn clean install'
+
+                // Rename the JAR to a fixed name for Docker
+                sh 'cp target/*.jar target/app.jar'
             }
         }
 
